@@ -1,7 +1,12 @@
 import React from 'react';
 
+type OwnPropsType = {
+    onClickFn: () => void
+    classBtn: string
+    title: string
+}
 
-class Button extends React.Component {
+class Button extends React.Component<OwnPropsType> {
 
     render = () => {
 

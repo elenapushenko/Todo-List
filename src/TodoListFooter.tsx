@@ -1,13 +1,24 @@
 import React from 'react';
 import Button from "./Button";
+import {ButtonsTitle} from "./Todolist";
 
+type StateType = {
+    isHidden: boolean
+}
 
-class TodoListFooter extends React.Component {
+type OwnPropsType = {
+    filterValue: string
+    buttons: Array<ButtonsTitle>
+    changeFilter: (newFilterValue: string) => void
+}
+
+class TodoListFooter extends React.Component<OwnPropsType, StateType> {
     state = {
         isHidden: false
     };
 
-    onAllFilterClick = () => {this.props.changeFilter(this.props.buttons[0].title)}
+    onAllFilterClick = () =>
+    {this.props.changeFilter(this.props.buttons[0].title)}
     onCompletedFilterClick = () => {this.props.changeFilter(this.props.buttons[1].title)}
     onActiveFilterClick = () => {this.props.changeFilter(this.props.buttons[2].title)}
     onShowFiltersClick = () => {this.setState({isHidden: false})}

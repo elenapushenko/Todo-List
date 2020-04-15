@@ -1,9 +1,16 @@
 import React from 'react';
 
+type StateType = {
+    error: boolean
+    title: string
+}
 
+type OwnPropsType = {
+    addItem: (newTitle: string) => void
+}
 
-class AddNewItemForm extends React.Component {
-    state = {
+class AddNewItemForm extends React.Component<OwnPropsType, StateType> {
+    state: StateType = {
         error: false,
         title: ""
     }
@@ -18,11 +25,11 @@ class AddNewItemForm extends React.Component {
         }
     };
 
-    onTitleChanged = (e) => {
+    onTitleChanged = (e: any) => {
         let newTitle = e.currentTarget.value;
         this.setState({error: false, title: newTitle})
     };
-    onAddItemEnterPress = (e) => {
+    onAddItemEnterPress = (e: any) => {
         if (e.key === "Enter") {
             this.onAddItemClick();
         }

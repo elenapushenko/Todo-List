@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.preloader {
+    height: 100px;
+    width: 100px;
+}
+
 .todoList {
     width: 300px;
 }
@@ -11,9 +16,7 @@
 }
 
 .todoListHeader {
-
-
-
+    font-weight: bold;
 }
 
 .todoList-task {
